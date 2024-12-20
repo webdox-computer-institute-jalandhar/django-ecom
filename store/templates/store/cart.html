@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Your Cart</title>
+</head>
+<body>
+    <h1>Your Cart</h1>
+    {% for item in cart_items %}
+        <div>
+            <h2>{{ item.product.name }}</h2>
+            <p>Price: ₹{{ item.product.price }} x {{ item.quantity }}</p>
+        </div>
+    {% endfor %}
+    <h3>Total Price: ₹{{ total_price }}</h3>
+    <a href="{% url 'place_order' %}">Place Order</a>
+</body>
+</html>
